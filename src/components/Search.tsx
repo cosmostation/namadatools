@@ -9,12 +9,14 @@ export const Search = () => {
   const search = async () => {
     try {
       const block = await axios.get(
-        `http://222.106.187.14:56530/block/height/${query}`
+        `${process.env.NEXT_PUBLIC_NAMADA_INDEXER_HOST}/block/height/${query}`
       );
       setResult(block.data);
     } catch (e) {}
     try {
-      const tx = await axios.get(`http://222.106.187.14:56530/tx/${query}`);
+      const tx = await axios.get(
+        `${process.env.NEXT_PUBLIC_NAMADA_INDEXER_HOST}/tx/${query}`
+      );
       setResult(tx.data);
     } catch (e) {}
   };
