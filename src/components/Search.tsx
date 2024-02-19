@@ -20,7 +20,7 @@ export const Search = () => {
   };
   return (
     <Stack spacing={3}>
-      <Stack spacing={1}>
+      <Stack spacing={2}>
         <Typography level="title-lg">Search</Typography>
         <Stack direction="row" spacing={1}>
           <Input
