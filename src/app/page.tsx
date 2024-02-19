@@ -11,6 +11,8 @@ import {
   Typography,
 } from "@mui/joy";
 
+import { NamadaInfo } from "@/components/NamadaInfo";
+import { Search } from "@/components/Search";
 import { Validator } from "@/components/Validator";
 import { useState } from "react";
 
@@ -28,9 +30,17 @@ function App() {
           >
             <TabList disableUnderline sx={{ mb: 3 }}>
               <Tab disableIndicator>Validators</Tab>
+              <Tab disableIndicator>Namada Infos</Tab>
+              <Tab disableIndicator>Transaction, Block</Tab>
             </TabList>
             <TabPanel value={0}>
               <Validator />
+            </TabPanel>
+            <TabPanel value={1}>
+              <NamadaInfo />
+            </TabPanel>
+            <TabPanel value={2}>
+              <Search />
             </TabPanel>
           </Tabs>
         </Stack>
