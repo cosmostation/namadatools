@@ -1,6 +1,6 @@
 1:HL["/namadatools/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:HL["/namadatools/_next/static/css/69f4a18f9b4922e5.css","style"]
-0:["mt6aIBXZb_TqpAI5r0P23",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/namadatools/_next/static/css/69f4a18f9b4922e5.css","precedence":"next"}]],"$L4"]]]]
+0:["rssE5u1C15pQ5_u9nA17r",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/namadatools/_next/static/css/69f4a18f9b4922e5.css","precedence":"next"}]],"$L4"]]]]
 5:I{"id":9540,"chunks":["600:static/chunks/600-5e3076e819ba2a0f.js","289:static/chunks/289-0331b708f79df1bd.js","185:static/chunks/app/layout-14e63ff02a446461.js"],"name":"Providers","async":false}
 6:I{"id":1443,"chunks":["272:static/chunks/webpack-15bd4e04abf2110e.js","971:static/chunks/fd9d1056-e0d4e394f1f14432.js","864:static/chunks/864-568cee2fa3c1da3e.js"],"name":"","async":false}
 7:I{"id":8639,"chunks":["272:static/chunks/webpack-15bd4e04abf2110e.js","971:static/chunks/fd9d1056-e0d4e394f1f14432.js","864:static/chunks/864-568cee2fa3c1da3e.js"],"name":"","async":false}
