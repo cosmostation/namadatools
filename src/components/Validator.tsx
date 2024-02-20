@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardCover,
-  Grid,
-  Stack,
-  Table,
-  Typography,
-} from "@mui/joy";
+import { Card, Grid, Stack, Table, Typography } from "@mui/joy";
 import { ellipsisAddress, formatDecimal } from "@/utils/strings";
 import { useEffect, useState } from "react";
 
@@ -40,8 +32,7 @@ export const Validator = () => {
         proposer_priority: validator.proposer_priority,
         missed_blocks: signingInfo?.missed_block_counter,
         alias: aliasInfo?.alias,
-        nam_address: aliasInfo?.nam_address,
-        net_address: aliasInfo?.net_address,
+        nam_address: signingInfo?.validator_address,
       };
 
       return aggregatedInfo;

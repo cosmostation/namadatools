@@ -15,14 +15,32 @@ import { NamadaInfo } from "@/components/NamadaInfo";
 import { Search } from "@/components/Search";
 import { Validator } from "@/components/Validator";
 import { useState } from "react";
+import { useStatus } from "@/hooks/\buseStatus";
 
 function App() {
   const [index, setIndex] = useState(0);
+  const { data: status } = useStatus();
   return (
     <Container>
       <Card sx={{ m: 5 }}>
         <Stack spacing={3}>
-          <Typography level="h1">Namada Tools ⚒️</Typography>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Typography level="h1">Namada Tools ⚒️</Typography>
+            <Typography level="body-sm">
+              Last Block Height:
+              {status && status.result.sync_info.latest_block_height}
+              <br />
+              Last Block Time:
+              {status &&
+                new Date(
+                  status.result.sync_info.latest_block_time
+                ).toLocaleString()}
+            </Typography>
+          </Stack>
 
           <Tabs
             value={index}
