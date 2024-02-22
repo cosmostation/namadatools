@@ -11,8 +11,9 @@ import {
   Typography,
 } from "@mui/joy";
 
+import { Block } from "@/components/Block";
 import { NamadaInfo } from "@/components/NamadaInfo";
-import { Search } from "@/components/Search";
+import { Transaction } from "@/components/Transaction";
 import { Validator } from "@/components/Validator";
 import { useState } from "react";
 import { useStatus } from "@/hooks/\buseStatus";
@@ -49,7 +50,8 @@ function App() {
             <TabList disableUnderline sx={{ mb: 3 }}>
               <Tab disableIndicator>Validators</Tab>
               <Tab disableIndicator>Namada Infos</Tab>
-              <Tab disableIndicator>Transaction, Block</Tab>
+              <Tab disableIndicator>Block</Tab>
+              <Tab disableIndicator>Transaction</Tab>
             </TabList>
             <TabPanel value={0}>
               <Validator />
@@ -58,7 +60,10 @@ function App() {
               <NamadaInfo />
             </TabPanel>
             <TabPanel value={2}>
-              <Search />
+              <Block />
+            </TabPanel>
+            <TabPanel value={3}>
+              <Transaction />
             </TabPanel>
           </Tabs>
         </Stack>
