@@ -15,12 +15,12 @@ export const Validator = () => {
   const { data: validatorsAlias } = useValidatorsAlias();
 
   useEffect(() => {
-    if (!signingInfos || !validatorsAlias || !validators) {
+    if (!validators || !validatorsAlias) {
       return;
     }
 
     const aggregatedInfo = validators.map((validator: any) => {
-      const signingInfo = signingInfos.find(
+      const signingInfo = signingInfos?.find(
         (info: any) => info.tendermint_address === validator.address
       );
 
@@ -38,7 +38,7 @@ export const Validator = () => {
       return aggregatedInfo;
     });
     setAggregatedValidator(aggregatedInfo);
-  }, [signingInfos, validatorsAlias]);
+  }, [validators, signingInfos, validatorsAlias]);
 
   return (
     <Stack spacing={3}>
@@ -108,17 +108,20 @@ export const Validator = () => {
                         : "-"}
                     </td>
                     <td>
-                      {(
-                        100 -
-                        (validator.missed_blocks /
-                          chainInfos.liveness_window_check) *
-                          100
-                      ).toFixed(1)}
-                      %
+                      {validator.missed_blocks
+                        ? `${(
+                            100 -
+                            (validator.missed_blocks /
+                              chainInfos.liveness_window_check) *
+                              100
+                          ).toFixed(1)}
+                      %`
+                        : "-"}
                     </td>
                     <td>
-                      {validator.missed_blocks} /{" "}
-                      {chainInfos.liveness_window_check}
+                      {validator.missed_blocks
+                        ? `${validator.missed_blocks} / ${chainInfos.liveness_window_check}`
+                        : "-"}
                     </td>
                     <td>{formatDecimal(validator.voting_power, 6, 2)}</td>
                   </tr>

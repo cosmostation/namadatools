@@ -1,7 +1,9 @@
 "use client";
 
 import {
+  Badge,
   Card,
+  Chip,
   Container,
   Stack,
   Tab,
@@ -31,7 +33,23 @@ function App() {
             alignItems="center"
           >
             <Typography level="h1">Namada Tools ⚒️</Typography>
+
             <Typography level="body-sm">
+              {status &&
+              Math.abs(
+                new Date(status.result.sync_info.latest_block_time).getTime() -
+                  new Date().getTime()
+              ) >
+                1000 * 60 * 10 ? (
+                <Chip color="danger" variant="solid">
+                  Halt
+                </Chip>
+              ) : (
+                <Chip color="success" variant="solid">
+                  Live
+                </Chip>
+              )}
+              <br />
               Last Block Height:
               {status && status.result.sync_info.latest_block_height}
               <br />
