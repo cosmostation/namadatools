@@ -108,20 +108,17 @@ export const Validator = () => {
                         : "-"}
                     </td>
                     <td>
-                      {validator.missed_blocks
-                        ? `${(
-                            100 -
-                            (validator.missed_blocks /
-                              chainInfos.liveness_window_check) *
-                              100
-                          ).toFixed(1)}
-                      %`
-                        : "-"}
+                      {(
+                        100 -
+                        ((validator.missed_blocks ?? 0) /
+                          chainInfos.liveness_window_check) *
+                          100
+                      ).toFixed(2)}
+                      %
                     </td>
                     <td>
-                      {validator.missed_blocks
-                        ? `${validator.missed_blocks} / ${chainInfos.liveness_window_check}`
-                        : "-"}
+                      {validator.missed_blocks ?? 0} /
+                      {chainInfos.liveness_window_check}
                     </td>
                     <td>{formatDecimal(validator.voting_power, 6, 2)}</td>
                   </tr>
